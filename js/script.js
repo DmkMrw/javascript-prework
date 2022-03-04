@@ -1,5 +1,11 @@
+const spanWin = document.getElementById("win");
+const spanLose = document.getElementById("lose");
+let win = 0;
+let lose = 0;
+
 function playGame(argPlayerInput) {
   clearMessages();
+
   function printMessage(msg) {
     let div = document.createElement("div");
     div.innerHTML = msg;
@@ -68,16 +74,24 @@ function playGame(argPlayerInput) {
 
   function displayResult(argComputerMove, argPlayerMove) {
     if (computerMove == "kamień" && playerMove == "papier") {
+      win++;
       printMessage("Ty wygrywasz!");
     } else if (computerMove == "papier" && playerMove == "nożyce") {
+      win++;
       printMessage("Ty wygrywasz!");
     } else if (computerMove == "nożyce" && playerMove == "kamień") {
+      win++;
       printMessage("Ty wygrywasz!");
     } else if (computerMove == playerMove) {
       printMessage("REMIS");
     } else {
+      lose++;
       printMessage("Przegrałeś!");
     }
+
+    console.log(win, lose);
+    spanWin.textContent = " " + win;
+    spanLose.textContent = " " + lose;
   }
 
   displayResult(computerMove, playerMove);
