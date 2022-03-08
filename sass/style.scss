@@ -8,23 +8,34 @@ h1 {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-align: center;
 }
-
-.interface {
-    padding-top: 0;
-    position: relative;
+.container {
     width: 100vw;
-    height: 100px;
 }
+
+#messages {
+    padding-top: 50px;
+    padding-left: 45%;
+}
+
 
 #buttons {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto;
+    text-align: center;
 }
 
-
+.rel {
+    padding-top: 100px;
+}
 h2 {
     padding-left: 20%;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgb(12, 12, 136);
+    border-radius: 50%;
+    &:hover {
+        cursor: pointer;
+        border-color: red;
+    }
 }
